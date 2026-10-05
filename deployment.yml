@@ -1,23 +1,51 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: my-html
   labels:
     app: my-html
+
 spec:
   replicas: 2
+
   selector:
     matchLabels:
       app: my-html
+
   template:
     metadata:
       labels:
         app: my-html
+
     spec:
       containers:
-      - name: demo-html
-        image: my-html:v2
-        imagePullPolicy: IfNotPresent 
-        ports:
-        - containerPort: 80
+        - name: demo-html
+          image: my-html:v2
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 80
+
+          volumeMounts:
+            # ConfigMap
+            - name: html-config
+              mountPath: /etc/config
+              readOnly: true
+
+            # Secret
+            - name: html-secret
+              mountPath: /etc/secret
+              readOnly: true
+
+      volumes:
+        # ConfigMap
+        - name: html-config
+          configMap:
+            name: html-cm
+
+        # Secret
+        - name: html-secret
+          secret:
+            secretName: html-secret
 
