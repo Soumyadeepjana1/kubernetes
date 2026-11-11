@@ -1,3 +1,6 @@
 kubectl
 minikube-linux-amd64
 *.swp
+kubectl
+minikube-linux-amd64
+*.swp
