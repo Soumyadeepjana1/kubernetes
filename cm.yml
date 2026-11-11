@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: html-cm
+
+data:
+  APP_NAME: "my-kubernetes-app"
+  APP_ENV: "development"
+  APP_VERSION: "v2"
+  APP_PORT: "80"
+  DB_HOST: "mysql-service"

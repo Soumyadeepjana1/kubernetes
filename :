@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: radis
+spec:
+  containers:
+    - name: radis
+      image: radis:latest
+      ports:
+        - containerPort: 80

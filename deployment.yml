@@ -7,7 +7,7 @@ metadata:
     app: my-html
 
 spec:
-  replicas: 2
+  replicas: 1
 
   selector:
     matchLabels:
@@ -48,4 +48,5 @@ spec:
         - name: html-secret
           secret:
             secretName: html-secret
+
 
