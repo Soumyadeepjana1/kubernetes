@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-sql-pod
+  namespace: nginx-tws
+
+spec:
+  containers: 
+    - name: my-sql
+      image: mysql:8.0
+      ports:
+       - containerPort: 3306

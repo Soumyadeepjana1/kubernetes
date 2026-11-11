@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+  namespace: nginx-tws
+spec:
+  containers:
+   - name: redis
+     image: redis:latest
+     ports:
+      - containerPort: 6379
